@@ -32,9 +32,9 @@
         </div>
         <div class="right-info">
         <h4>大手拉小手—引導計畫｜引導高關懷孩子逆轉人生</h4>
-        <h3>定期定額｜理念推手  每期 NT$ 300</h3>
-        <p>提案人
-        <a href="https://www.you-care.org.tw/"style="color:#000000;text-decoration:none;font-weight: bold;font-size:20px;">財團法人普仁青年關懷基金會</a></p>
+        <h3>定期定額｜理念推手&nbsp每期 NT$<span id="mpay">300</span></h3>
+        <h5 style="font-size:20px;">提案人
+        <a href="https://www.you-care.org.tw/"style="color:#000000;text-decoration:none;font-weight: bold;">財團法人普仁青年關懷基金會</a></h5>
         <div>
           <!-- 目前已募資金額 -->
         <div class="money">
@@ -57,7 +57,7 @@
       <div class="left-project-text">
         <div class="left-project-top">
           <h5>大手拉小手—引導計畫｜引導高關懷孩子逆轉人生</h5>
-          <h3 style="font-weight: bold;">定期定額｜理念推手   每期 NT$ 300</h3> <hr>
+          <h3 style="font-weight: bold;">定期定額｜理念推手&nbsp每期 NT$ 300</h3> <hr>
           <p>▉ 每月300元捐款一年，相當於支持一個社團15％的每月花費。
           </p>
           <p>▉ 本方案回饋：
@@ -113,15 +113,15 @@
     </div>
     
     <div class="right-text">
-<label class="option"> 加碼贊助 （選擇）</label>
-<h4> $ <input type="number" id="number" class="number" name="points" min="0" max="100" value="0" ></h4>
+      <label class="option"> 加碼贊助 （選擇）</label>
+      <h4>$ <input type="number" id="spNum" class="number" name="points" min="0" max="100" value="0" onchange="sendSpnum()"/></h4>
     </div>
     
     <div class="right-text">
       <div class="right-text-area">
       <label class="delivery">收件地點</label>
         <label for="country"></label>
-        <select id="country" name="country" class="country">
+        <select id="country" name="country" class="country" id="country" onchange="sendDfee()">
           <option value="台灣本島">台灣本島</option>
           <option id="tw-land"value="台灣外島(需額外運費)">台灣外島(需額外運費)</option>
           <option id="hk"value="香港">香港</option>
@@ -172,7 +172,7 @@
   </div>
    <div class="right-text">
     <label class="person">收件人</label><br>
-    <input type="text" class="form-control" style="width: 100%;  height: 3em;border-radius: 5px;">
+    <input type="text" class="form-control" style="width: 100%; height:3em; border-radius:5px;">
    </div>
    <div class="right-text">
     <label class="phone">連絡電話</label><br>
@@ -185,13 +185,21 @@
 
    <div class="right-project-total">
 <div>
-  <label>選擇方案</label><br>
-  <label text="javascript:document.getElementById('show').innerHtml('number')">加碼贊助</label><br>
-  <label>運費</label><br>
+  <label>選擇方案</label>
+  <span>NT$<output id="mpayInput"></output></span>
+  <br>
+  <label>加碼贊助</label>
+  <span>NT$<output id="spInput">0</output></span>
+  <br>
+  <label>運費</label>
+  <span>NT$<output id="delivery-fee">0</output></span>
+  <br>
   <hr>
-  <label class="total">總金額</label>
-  <input id="a" type="text" />+<input id="number" />+<input id="county"/>
-  <output id="result"></output>
+  <div style="font-weight: bold;font-size: 30px;">
+    <label>總金額</label>
+  <span>NT$<output id="result"></output></span>
+  </div>
+
 </div>
 
    </div>
